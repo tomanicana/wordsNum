@@ -77,12 +77,16 @@ public class Main {
 
         TreeMap<String, Integer> finalThing = new TreeMap<>();
         Integer howMuch;
+        int uniqWord = 0;
 
         for (String word : allWords) {
             howMuch = finalThing.get(word);
 
+
+
             if (howMuch == null) {
                 finalThing.put(word, 1);
+                uniqWord++;
             } else {
                 finalThing.put(word, howMuch + 1);
             }
@@ -106,6 +110,7 @@ public class Main {
         }
         System.out.println(allWords.toString());
         System.out.println("Всего слов: " + allWords.size());
+        System.out.println("Уникальных слов " + uniqWord);
         System.out.println("Наибольшее число повторений слова " + slovo +  ": " + countNum);
 
     }
