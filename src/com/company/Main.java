@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -68,13 +67,10 @@ public class Main {
         for (String something : tryNotKill.split(" ")) {
             allWords.add(something);
         }
-
-
-       // System.out.println(allWords.size());
-      //  System.out.println(tryNotKill);
-        System.out.println(allWords.toString());
-     //   System.out.println(allWords.get(14));
-
+        //System.out.println(allWords.size());
+        //System.out.println(tryNotKill);
+        //System.out.println(allWords.toString());
+        //System.out.println(allWords.get(14));
         //получили массив со словами, проверяемп на уникальность
 
         TreeMap<String, Integer> finalThing = new TreeMap<>();
@@ -90,24 +86,19 @@ public class Main {
         }
 
         int pukpukpuk = 1;
-       // String slovo;
 
         for (Map.Entry e : finalThing.entrySet()) {
             int shlapa = (int) e.getValue();
-           // String slovo;
+
             if (shlapa > pukpukpuk) {
                 pukpukpuk = pukpukpuk + 1;
-            //    slovo = (String) e.getKey();
             }
         }
 
 
-
         System.out.println("Всего слов в книге: " + allWords.size());
         System.out.println("Уникальных слов в книге: " + finalThing.size());
-        System.out.println("Слово "  +  " было использовано " + pukpukpuk + " раз");
-
-
+        System.out.println("Слово "+ "пока не знаю какое" +  " было использовано " + pukpukpuk + " раз");
 
     }
 }
