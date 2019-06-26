@@ -78,6 +78,7 @@ public class Main {
 
         for (String word : allWords) {
             howMuch = finalThing.get(word);
+
             if (howMuch == null) {
                 finalThing.put(word, 1);
             } else {
@@ -85,20 +86,25 @@ public class Main {
             }
         }
 
-        int pukpukpuk = 1;
+        //запихали в карту все лова со значениями
+
+        int countNum = 1;
+        String slovo = null;
+
 
         for (Map.Entry e : finalThing.entrySet()) {
             int shlapa = (int) e.getValue();
+            String huapa = (String) e.getKey();
 
-            if (shlapa > pukpukpuk) {
-                pukpukpuk = pukpukpuk + 1;
+            if (shlapa > countNum) {
+                countNum = countNum + 1;
+                slovo = huapa;
+
             }
         }
-
-
-        System.out.println("Всего слов в книге: " + allWords.size());
-        System.out.println("Уникальных слов в книге: " + finalThing.size());
-        System.out.println("Слово "+ "пока не знаю какое" +  " было использовано " + pukpukpuk + " раз");
+        System.out.println(allWords.toString());
+        System.out.println("Всего слов: " + allWords.size());
+        System.out.println("Наибольшее число повторений слова " + slovo +  ": " + countNum);
 
     }
 }
