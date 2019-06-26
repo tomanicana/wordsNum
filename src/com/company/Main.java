@@ -1,23 +1,25 @@
 package com.company;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // write your code here
 
         ArrayList<Character> arrayText = new ArrayList<>();
 
-        BufferedReader reader = null;
+        //BufferedReader reader = null;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Укажите файл для чтения");
+        String fileName = reader.readLine();
+
+
         try {
-            reader = new BufferedReader(new FileReader(new File("/Users/tamaranikolaeva/IdeaProjects/wordsNum/src/com/company/example.txt")));
+            reader = new BufferedReader(new FileReader(fileName));
 
             int c;
             while ((c = reader.read()) != -1) {
